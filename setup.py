@@ -60,7 +60,10 @@ PACKAGES = setuptools.find_namespace_packages(include=["minchin.*"])
 INSTALL_REQUIRES = [
     "minchin.pelican.plugins.autoloader != 1.2.0",
     "pelican >= 3.4",
-    "pillow",
+    "pillow >= 10.3.0",
+
+    # minimums for security reasons
+    "Jinja2 >= 3.1.6",  # otherwise via pelican
 ]
 
 EXTRA_REQUIRES = {
