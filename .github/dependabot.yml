@@ -10,9 +10,18 @@ updates:
   #   schedule:
   #     interval: "monthly"
       
+
+  # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the
-    # default location of `.github/workflows`
-    directory: "/"
+    directory: "/" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    commit-message:
+      prefix: "[GitHub] "
+      include: "scope"
+    open-pull-requests-limit: 2
+    cooldown:
+      default-days: 7
+    labels:
+      - "dependencies"
+      - "bot"
